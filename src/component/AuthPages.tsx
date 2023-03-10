@@ -1,16 +1,16 @@
-import React, {ReactNode, useEffect} from "react";
+import React, { ReactNode, useEffect } from "react";
 import { Navigate, Outlet, useNavigate, useLocation } from "react-router-dom";
 
 type RouterProps = {
-  redirectPath: String,
+  redirectPath: string,
   children: ReactNode
 }
 
-const AuthPages = ({ redirectPath = "/login", children }) => {
+const AuthPages = ({ redirectPath = "/login", children }: RouterProps) => {
 
-  let isLogin = false;
+  let isLogin: boolean = false;
 
-  if(localStorage.getItem('islogin') == 'true'){
+  if(localStorage.getItem('islogin') === 'true'){
       isLogin = true
   }else{
     isLogin = false
